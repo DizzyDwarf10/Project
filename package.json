@@ -1,0 +1,27 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "W&amp;D",
+  "homepage": "https://github.com/DizzyDwarf10/Project#readme",
+  "bugs": {
+    "url": "https://github.com/DizzyDwarf10/Project/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DizzyDwarf10/Project.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "Main.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}
