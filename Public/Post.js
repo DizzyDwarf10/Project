@@ -3,6 +3,10 @@ let postForm = document.getElementById("postForm");
 
 console.log(postForm)
 
+  if (postForm) {
+    postForm.addEventListener("submit", submitPost);
+  }
+
   class Post {
     constructor(content) {
       this.content = content;
@@ -12,10 +16,10 @@ console.log(postForm)
   function submitPost(e) {
     e.preventDefault();
 
-    const content = document.getElementById("post").value;
+    const content = document.getElementById("post").value.trim();
 
     if (!content) {
-      alert("Please enter a post before submitting.");
+      alert("Please make a post before submitting.");
       return;
     }
 
