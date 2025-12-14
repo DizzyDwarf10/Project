@@ -1,40 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="PostDesign.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Post</title>
+  <link rel="stylesheet" href="PostDesign.css">
 </head>
 <body>
-    <header>
-        <h1>Welcome to The Wall!</h1>
-        <nav>
-        <ul>
-            <li><a href="Post.html" target="_blank">Post</a></li>
-            <li><a href="Login.html" target="_blank">Login</a></li>
-            <li><a href="Register.html" target="_blank">Register</a></li>
-        </ul>
+  <header>
+    <h1>Create a New Post</h1>
+    <nav>
+      <ul>
+        <li><a href="Home.html" target="_blank">Homepage</a></li>
+      </ul>
     </nav>
-    </header>
-    <hr>
-    <br>
-    <main>
-        <h2>Post Here: </h2>
-        <section class="container">
-            <br>
-            <form id ="postForm">
-                <label for="title">Title:</label><br>
-                <input type="text" id="title" name="title" required><br><br>
-                <label for="post">Post:</label>
-                <br>
-                <textarea id="post" rows="4" cols="50"></textarea>
-                <br>
-                <input type="submit" value="POST">
-            </form>
-        </section>
-    </main>
-    <br>
-    <script src="Post.js"></script>
+  </header>
+  <hr>
+
+  <main>
+    <h2>Post Here:</h2>
+    <section class="container">
+      <form id="postForm">
+        <label for="title">Title:</label><br>
+        <input type="text" id="title" name="title" required><br><br>
+        <label for="post">Post:</label><br>
+        <textarea id="post" rows="4" cols="50"></textarea><br>
+        <input type="submit" value="POST">
+      </form>
+    </section>
+  </main>
+
+  <script src="Post.js"></script>
 </body>
 </html>

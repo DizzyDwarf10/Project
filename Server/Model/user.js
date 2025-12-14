@@ -30,12 +30,19 @@ async function userExists(user) {
 
 // READ in CRUD - Logging in a user
 async function login(user) {
-  let cUser = await userExists(user)
-  if(!cUser[0]) throw Error("Username does not exist!")
-  if(cUser[0].Password != user.Password) throw Error("Password incorrect!!")
+  let sql = `
+    SELECT * FROM User 
+    WHERE Email = "${user.Email || ''}" 
+       OR Username = "${user.Username || ''}"
+  `;
+  let result = await con.query(sql);
 
-  return cUser[0]
+  if (result.length === 0) throw Error("User not found!");
+  if (result[0].Password != user.Password) throw Error("Password incorrect!!");
+
+  return result[0];
 }
+
 
 // CREATE for User - registering
 async function register(user) {
