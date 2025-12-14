@@ -25,14 +25,10 @@ function login(e) {
   
 }  
 
-// Register Form
-// 1. Store form in a variable
 let registerForm = document.getElementById("registerForm")
 
-// 2. Add event listener
 if(registerForm) registerForm.addEventListener('submit', register)
 
-// 3. Create applicable function
 function register(e) {
   e.preventDefault()
 
@@ -62,8 +58,6 @@ function validPassword(password, confimPassword) {
   return password === confimPassword;
 }
 
-
-// local storage functions
 export function setCurrentUser(user) {
   localStorage.setItem('user', JSON.stringify(user))
 }
@@ -71,9 +65,6 @@ export function setCurrentUser(user) {
 export function getCurrentUser() {
   return JSON.parse(localStorage.getItem('user'))
 }
-// example accessing userId for second entity
-// let currentUser = getCurrentUser()
-// let userId = currentUser.userId
 
 export function removeCurrentUser() {
   localStorage.removeItem('user')

@@ -55,7 +55,7 @@ async function register(user) {
   `  
   await con.query(sql)
   let newUser = await login(user)
-  return newUser //issue fixed from class: removed [0] since login function returns this already
+  return newUser 
 }
 
 //U for Update - Update email of user
@@ -90,7 +90,6 @@ async function deleteAccount(user) {
   await con.query(sql)
 }
 
-// CRUD functions will go here 
 //R for READ -- get all users
 async function getAllUsers() {
   let sql = `SELECT * FROM User;`

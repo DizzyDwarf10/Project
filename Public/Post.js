@@ -17,14 +17,14 @@ async function submitPost(e) {
 
   const title = document.getElementById("title").value.trim();
   const body = document.getElementById("post").value.trim();
-  const userId = localStorage.getItem("userId"); // use logged-in user ID
+  const userId = localStorage.getItem("userId"); 
 
   if (!title || !body) {
     alert("Please fill out both fields.");
     return;
   }
 
-  const newPost = new Post(userId || 1, title, body); // fallback to 1 if no user logged in
+  const newPost = new Post(userId || 1, title, body); 
 
   try {
     const response = await fetch("http://localhost:3000/posts/create", {

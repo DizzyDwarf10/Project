@@ -1,4 +1,3 @@
-// Fetch and display all posts
 async function loadPosts() {
   try {
     const response = await fetch("http://localhost:3000/posts/getPosts");
@@ -16,7 +15,6 @@ async function loadPosts() {
   }
 }
 
-// Helper to render a single post
 function displayPost(post) {
   const postsContainer = document.getElementById("posts");
   const postDiv = document.createElement("div");
@@ -25,5 +23,4 @@ function displayPost(post) {
   postsContainer.appendChild(postDiv);
 }
 
-// Load posts when page loads
 window.onload = loadPosts;

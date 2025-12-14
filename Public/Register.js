@@ -45,7 +45,6 @@ async function register(e) {
   console.log("New Registered User:", newUser);
 
   try {
-    // Step 1: Register user
     const regResponse = await fetch("http://localhost:3000/users/register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -59,7 +58,6 @@ async function register(e) {
 
     console.log("Registration successful");
 
-    // Step 2: Immediately log in
     const loginResponse = await fetch("http://localhost:3000/users/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -74,10 +72,8 @@ async function register(e) {
     const user = await loginResponse.json();
     console.log("Login successful:", user);
 
-    // Step 3: Store user info (so Post.js can use it)
     localStorage.setItem("userId", user.UserID);
 
-    // Step 4: Redirect to homepage
     window.location.href = "Login.html";
   } catch (err) {
     alert("Error: " + err.message);

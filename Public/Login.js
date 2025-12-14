@@ -39,11 +39,9 @@ async function login(e) {
     const user = await response.json();
     console.log("Login successful:", user);
 
-    // Store UserID for posts
     localStorage.setItem("userId", user.UserID);
-
-    // Redirect to homepage
-    window.location.href = "Post.html";
+  
+    window.location.href = "Home.html";
   } catch (err) {
     alert("Login failed: " + err.message);
     console.error(err);
