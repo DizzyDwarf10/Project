@@ -6,7 +6,7 @@ async function createTable() {
     Username VARCHAR(255) NOT NULL UNIQUE,
     Email VARCHAR(255) NOT NULL UNIQUE,
     Password VARCHAR(255) NOT NULL,
-    CONSTRAINT userPK PRIMARY KEY(userID)
+    CONSTRAINT userPK PRIMARY KEY(UserID)
   );`
   await con.query(sql)
 }
@@ -42,7 +42,6 @@ async function login(user) {
 
   return result[0];
 }
-
 
 // CREATE for User - registering
 async function register(user) {

@@ -8,14 +8,15 @@ async function loadPosts() {
     postsContainer.innerHTML = "";
 
     posts.forEach(post => {
-      const postBox = document.createElement("div");
-      postBox.className = "post-box";
-      postBox.innerHTML = `
-        <h3>${post.Title}</h3>
-        <p>${post.Body}</p>
-      `;
-      postsContainer.appendChild(postBox);
-    });
+    const postBox = document.createElement("div");
+    postBox.className = "post-box";
+    postBox.innerHTML = `
+      <p class="post-user">Posted by: ${post.Username}</p>
+      <h3>${post.Title}</h3>
+      <p>${post.Body}</p>
+    `;
+    postsContainer.appendChild(postBox);
+  });
   } catch (err) {
     console.error("Error loading posts:", err);
   }

@@ -61,10 +61,20 @@ async function deletePost(post) {
   return { message: "Post deleted successfully." };
 }
 
-// Extra: Get all posts
+//Get all posts
 async function getAllPosts() {
-  let sql = `SELECT * FROM Post`;
+  let sql = `
+    SELECT Post.PostID, Post.Title, Post.Body, User.Username
+    FROM Post
+    JOIN User ON Post.UserID = User.UserID
+  `;
   return await con.query(sql);
 }
 
-module.exports = { createPost, updatePostBody, getPostByTitle, deletePost, getAllPosts };
+//Get all posts by a specific user
+async function getPostsByUser(userId) {
+  let sql = `SELECT * FROM Post WHERE UserID = ?`;
+  return await con.query(sql, [userId]);
+}
+
+module.exports = { createPost, updatePostBody, getPostByTitle, deletePost, getAllPosts, getPostsByUser};

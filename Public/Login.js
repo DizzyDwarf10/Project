@@ -36,12 +36,13 @@ async function login(e) {
       throw new Error(err.message);
     }
 
-    const user = await response.json();
-    console.log("Login successful:", user);
+  const user = await response.json();
+  console.log("Login successful:", user);
 
-    localStorage.setItem("userId", user.UserID);
+  localStorage.setItem("user", JSON.stringify(user));
+
+  window.location.href = "Profile.html";
   
-    window.location.href = "Home.html";
   } catch (err) {
     alert("Login failed: " + err.message);
     console.error(err);

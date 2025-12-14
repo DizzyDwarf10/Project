@@ -19,14 +19,13 @@ router
   try {
     const post = await Post.createPost(req.body);
     res.send(post);
-   } catch (err) {
+  } catch (err) {
     console.error("Create post error:", err);
     res.status(400).send({ message: err.message });
   }
-
 })
 
-// READ - get a single post by title + user
+// READ - get a single post by title
 .post('/getPost', async (req, res) => {
   try {
     const post = await Post.getPostByTitle(req.body);
@@ -35,7 +34,17 @@ router
     console.error("Get post error:", err);
     res.status(400).send({ message: err.message });
   }
+})
 
+//READ - get all posts for a specific user
+.get('/user/:id', async (req, res) => {
+  try {
+    const posts = await Post.getPostsByUser(req.params.id);
+    res.send(posts);
+  } catch (err) {
+    console.error("Get posts by user error:", err);
+    res.status(400).send({ message: err.message });
+  }
 })
 
 // UPDATE - update post body
@@ -58,7 +67,6 @@ router
     console.error("Delete post error:", err);
     res.status(400).send({ message: err.message });
   }
-
 });
 
 module.exports = router;
